@@ -12,7 +12,7 @@ def var_int(x):
             varint.append(t)
         else:
             varint.append(t | 0x80)  # ensure last bit is set
-        i = i << 1 | msb_set
+        i = i << 1 | msb_set  # add msb to next byte
         print("i2 = >>{:b}".format(i))
     return varint
 
