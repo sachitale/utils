@@ -1,6 +1,6 @@
 def var_int(x):
     varint = list()
-    i = x & (0xffffffff if x <= 2**32 else 0xffffffffffffffff)
+    i = x & (0xffffffff if x < 2**32 else 0xffffffffffffffff)
     print("       {:b}".format(i))
     while i != 0:
         t = i & 0xff
