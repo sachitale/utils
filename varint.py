@@ -17,6 +17,15 @@ def var_int(x):
     return varint
 
 
+def varint_2_int(vi):
+    ri = 0
+    for x in reversed(vi):
+        ri = (ri << 7) | (x & 0x7f)
+        print("x = %s, ri = %s" % (x, ri))
+    print("ri = %s" % ri)
+    return ri
+
+
 if __name__ == "__main__":
     v = var_int(-2)
     for b in v: print("{:}".format(b))
